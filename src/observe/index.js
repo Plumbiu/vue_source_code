@@ -4,7 +4,7 @@ class Observer {
   constructor(data) {
     // Object.defineProperty 只能劫持已经存在的属性，新增删除数据不可以
     // vue 里面会为此单独写一些 api $set $delete
-    Object.defineProperties(data, '__ob__', {
+    Object.defineProperty(data, '__ob__', {
       value: this,
       enumerable: false
     })
