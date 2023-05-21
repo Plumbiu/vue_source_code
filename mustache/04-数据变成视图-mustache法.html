@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./mustache.js"></script>
+</head>
+
+<body>
+  <div id="container"></div>
+  <div id="wrapper"></div>
+  <script>
+    var templateStr = `
+      <ul>
+        {{#arr}}
+          <li>
+            <div class="hd">{{name}}的基本信息</div>
+            <div class="bd">
+              <p>姓名：{{name}}</p>  
+              <p>年龄：{{age}}</p>  
+              <p>性别：{{sex}}</p>  
+            </div>
+          </li>
+        {{/arr}}
+      </ul>
+    `
+    const data = {
+      arr: [
+        { name: '小明', age: 12, sex: '男' },
+        { name: '小红', age: 11, sex: '女' },
+        { name: '小强', age: 13, sex: '男' }
+      ]
+    }
+    const wrapperData = {
+      thing: '苹果手机',
+      mood: '开心'
+    }
+    const domStr = Mustache.render(templateStr, data)
+    const wrapperDomStr = Mustache.render(`
+      <h1>我买一个{{thing}}，好{{mood}}</h1>
+    `, wrapperData)
+    const container = document.getElementById('container')
+    const wrapper = document.getElementById('wrapper')
+    container.innerHTML = domStr
+    wrapper.innerHTML = wrapperDomStr
+  </script>
+</body>
+
+</html>
