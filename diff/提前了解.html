@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <ul id="container">
+      <li>1</li>
+      <li>2</li>
+      <li id="c3">3</li>
+      <li>4</li>
+    </ul>
+    <button id="btn1">添加5</button>
+    <button id="btn2">添加3.5</button>
+  </div>
+  <script>
+    const container = document.getElementById('container')
+    const c3 = document.getElementById('c3')
+    const btn1 = document.getElementById('btn1')
+    const btn2 = document.getElementById('btn2')
+
+    btn1.addEventListener('click', () => {
+      const dom1 = document.createElement('li')
+      dom1.innerText = 5
+      container.insertBefore(dom1, null)
+    })
+    btn2.addEventListener('click', () => {
+      const dom2 = document.createElement('li')
+      dom2.innerText = 3.5
+      container.insertBefore(dom2, c3)
+    })
+  </script>
+</body>
+
+</html>
