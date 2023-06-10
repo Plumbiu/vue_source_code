@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./vue.js"></script>
+    <script>
+      // 响应式的数据变化
+      // 数据的取值和更改值，我们要监控到
+      const vm = new Vue({
+        data() {
+          // 代理数据
+          return {
+            name: 'xj',
+            age: 20,
+            address: {
+              num: 30,
+              content: '杭州'
+            },
+            hobby: ['唱', '跳', 'rap', '篮球']
+          }
+        },
+      })
+      // 修改数组，很少用索引操作数组，因为如果索引太多，内部劫持太浪费性能(有1w个元素，就要循环1w遍)
+      // 用户一般使用 push、shift 修改数组
+      console.log(vm.hobby.unshift({
+        a: 1
+      }))
+      console.log(vm)
+    </script>
+  </body>
+</html>

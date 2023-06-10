@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="container">
+    ABC
+  </p>
+  <div>
+    <div id="wrapper"></div>
+    <button id="btn">show</button>
+  </div>
+  <script>
+    const container = document.getElementById('container')
+    const fragment = document.createDocumentFragment()
+    const wrapper = document.getElementById('wrapper')
+    const btn = document.getElementById('btn')
+    console.log(container.firstChild)
+    fragment.appendChild(container.firstChild)
+    console.log(container)
+    btn.addEventListener('click', () => {
+      wrapper.appendChild(fragment)
+    })
+  </script>
+</body>
+</html>
