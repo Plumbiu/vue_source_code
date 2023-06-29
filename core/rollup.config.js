@@ -8,7 +8,8 @@ export default {
     file: './dist/vue.js', // 出口
     name: 'Vue',
     format: 'umd', // esm es6 模块 commonjs模块 iife自执行函数 umd(commonjs amd)
-    sourcemap: true // 可以调试源代码
+    sourcemap: true, // 可以调试源代码
+    strict: false
   },
   plugins:[
     babel({

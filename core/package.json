@@ -6,10 +6,12 @@
   "license": "MIT",
   "dependencies": {},
   "scripts": {
-    "dev": "rollup -cw"
+    "dev": "rollup -cw --no-strict"
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "@babel/plugin-transform-strict-mode": "^7.22.5",
     "@babel/preset-env": "^7.22.4",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "rollup": "^3.23.0",
